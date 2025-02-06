@@ -3,8 +3,10 @@ from django.urls import path
 from . import views
 
 
-urlpatterns = [
-    path('', views.my_view),
-    path('anasayfa', views.my_view),
-    path('kurslar', views.kurslar),    
+urlpatterns = [    
+    path('', views.kurslar),    
+    path('list', views.kurslar),    
+    path('<kurs_adi>', views.details),        
+    path('kategory/<int:category_id>', views.getcoursesByCategoryId),    
+    path('kategory/<str:category_name>', views.getcoursesByCategory,name='coursesByCategory'),
 ]
