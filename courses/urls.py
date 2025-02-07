@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns = [    
-    path('', views.kurslar),    
+    path('', views.index),    
     path('list', views.kurslar),    
     path('<kurs_adi>', views.details),        
     path('kategory/<int:category_id>', views.getcoursesByCategoryId),    

@@ -5,13 +5,13 @@ from django.template import TemplateDoesNotExist
 # Create your views here.
 def index(request):
     try:
-        return render(request, 'index.html')
+        return render(request, 'pages/index.html')
     except TemplateDoesNotExist:
         return HttpResponse("Template not found")
     #return HttpResponse("index")
 
-def iletisim(request):
-    return HttpResponse("İletişim")
+def contact(request):
+    return render(request, 'pages/contact.html')
 
-def hakkimizda(request):
-    return HttpResponse("Hakkımızda")
+def about(request):
+    return render(request, 'pages/about.html')

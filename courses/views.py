@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.template import TemplateDoesNotExist
 from django.urls import reverse
 
 data = {
@@ -8,7 +9,13 @@ data = {
         "mobil": "mobil kategorisi",
        }
 
-
+def index(request):
+    try:
+        return render(request, 'courses/index.html')
+    except TemplateDoesNotExist:
+        return HttpResponse("Template not found")
+    #return HttpResponse("index")
+    
 def kurslar(request):
     list_items = ""
     category_list = list(data.keys())
