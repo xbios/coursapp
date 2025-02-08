@@ -5,5 +5,23 @@
 {% endblock %}
 
 {% block content %} 
-    <h1>Courses Ana Saysa</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-3">
+                <!-- Categories content -->
+                {% comment %} {% include "courses/partials/_categories.html" %} {% endcomment %}
+
+    <ul class="list-group">
+        {% for category in categories %}
+            <li class="list-group-item"><a href="{% url "courses_by_category" category %}">{{category}}</a></li>
+        {% endfor %}
+    
+    </ul>
+            </div>
+            <div class="col-9">
+               <h1>Kurslar Ana Sayfa</h1>   
+               <p>Bu kurslar dizin sayfasıdır.</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

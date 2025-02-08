@@ -1,13 +1,21 @@
 {% extends "layout.html" %}
     
 {% block content %} 
-    <h1>Contact Page</h1>
-    <p>This is the contact page.</p> 
-    The contact page is similar to the about page. It has an  h1  element with the text "Contact Page" and a  p  element with the text "This is the contact page." 
-    Now that we have created the contact page, let's create a URL pattern for it. 
-    Step 4 — Creating a URL Pattern for the Contact Page 
-    In this step, we will create a URL pattern for the contact page. 
-    Open the  pages/urls.py  file in your code editor: 
-    Add the following code to the file: 
-    from django.urls import path
+    <div class="container mt-5">
+        <div class="row">    
+            <div class="col-12">               
+                <h1>İletişim Sayfası</h1>
+                <p>Bu iletişim sayfasıdır.</p> 
+                The contact page is similar to the about page. It has an  h1  element with the text "Contact Page" and a  p  element with the text "This is the contact page." 
+                Now that we have created the contact page, let's create a URL pattern for it. 
+                Step 4 — Creating a URL Pattern for the Contact Page 
+                In this step, we will create a URL pattern for the contact page. 
+                Open the  pages/urls.py  file in your code editor: 
+                Add the following code to the file: 
+                from django.urls import path
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
