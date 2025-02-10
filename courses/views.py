@@ -15,26 +15,37 @@ db = {
     "courses" : [
         {             
             "title": "javascript kursu", 
-            "category": "javascript kurs açıklaması", 
-            "iamgeUrl": "javascript.jpg",
+            "description": "javascript kurs açıklaması", 
+            "iamgeUrl": "https://img-c.udemycdn.com/course/750x422/1662526_fc1c_3.jpg",
             "slug": "javascript-kursu",
-            "date": date(2025, 10, 10)
+            "date": date(2025, 10, 10),
+            "isActive": True,
+            "isUpdated": False
         },
         {             
             "title": "python kursu", 
-            "category": "python kurs açıklaması", 
-            "iamgeUrl": "python.jpg",
+            "description": "python kurs açıklaması", 
+            "iamgeUrl": "https://img-c.udemycdn.com/course/750x422/2463492_8344_3.jpg",
             "slug": "python-kursu",
-            "date": date(2025, 10, 10)
+            "date": date(2025, 9, 10),
+            "isActive": False,
+            "isUpdated": False
         },
         {             
             "title": "web geliştirme kursu", 
-            "category": "web geliştirme kurs açıklaması", 
-            "iamgeUrl": "web-geliştirme.jpg",
+            "description": "web geliştirme kurs açıklaması", 
+            "iamgeUrl": "https://img-c.udemycdn.com/course/750x422/1258436_2dc3_4.jpg",
             "slug": "web-gelistirme-kursu",
-            "date": date(2025, 10, 10)
+            "date": date(2025, 8, 10),
+            "isActive": True,
+            "isUpdated": True
         }
-    ]
+    ],
+    "categories": [
+        {"id":1, "name":"programlama","slug":"programlama"},
+        {"id":2, "name":"web programalama","slug":"web"},
+        {"id":3, "name":"mobil uygulama","slug":"mobil"},        
+    ]   
 }
 
 # def index(request):
@@ -46,10 +57,22 @@ db = {
     
 def index(request):
     # list_items = ""
-    category_list = list(data.keys())
+    #category_list = list(data.keys())    
+    
+    #kurslar = db["courses"]
+    #kurslar = []
+    # list comprehension
+    kurslar = [course for course in db["courses"] if course["isActive"]]
+    kategoriler = db["categories"]
+
+    # for kurs in db["courses"]:
+    #     if kurs["isActive"]:
+    #         kurslar.append(kurs)       
     
     return render(request, 'courses/index.html',{ 
-        'categories': category_list 
+        #'categories': category_list 
+        'categories': kategoriler,
+        'courses': kurslar,
         })
 
     # for category in category_list:
