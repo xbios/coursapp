@@ -34,7 +34,8 @@ db = {
             "slug": "web-gelistirme-kursu",
             "date": date(2025, 10, 10)
         }
-    ]
+    ],
+    "categories":["programlama","web","mobil"]
 }
 
 # def index(request):
