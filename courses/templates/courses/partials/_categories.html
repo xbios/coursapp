@@ -1,21 +1,9 @@
-<<<<<<< HEAD
     <ul class="list-group">
         {% for category in categories %}
             <li class="list-group-item"><a href="{% url "courses_by_category" category.slug %}">
                 {% comment %} {{ category.name | title }}  {% endcomment %}
                 {{ category.name | upper }} 
             </a></li>
-=======
-    {% comment %} <ul class="list-group">
-        <li class="list-group-item"><a href="#">Web Programming</a></li>
-        <li class="list-group-item"><a href="#">Mobile Programming</a></li>
-        <li class="list-group-item"><a href="#">Other Programming</a></li>
-    </ul> {% endcomment %}
-
-        <ul class="list-group">
-        {% for category in categories %}
-            <li class="list-group-item"><a href="{% url "courses_by_category" category %}">{{category}}</a></li>
->>>>>>> 40c2defba1cc2878f533477d4f4740204187a851
         {% endfor %}
     
     </ul>

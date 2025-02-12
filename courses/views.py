@@ -41,15 +41,11 @@ db = {
             "isUpdated": True
         }
     ],
-<<<<<<< HEAD
     "categories": [
         {"id":1, "name":"programlama","slug":"programlama"},
         {"id":2, "name":"web programalama","slug":"web"},
         {"id":3, "name":"mobil uygulama","slug":"mobil"},        
     ]   
-=======
-    "categories":["programlama","web","mobil"]
->>>>>>> 40c2defba1cc2878f533477d4f4740204187a851
 }
 
 # def index(request):
