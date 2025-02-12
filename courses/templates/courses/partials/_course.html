@@ -1,12 +1,15 @@
+    {% load static %}
     <div class="card mb-3" >
         <div class="row">
             <div class="col-4">
-                <img src="{{ course.iamgeUrl }}" class="img-fluid rounded-start" alt="{{ course.title }}">
+                {% comment %} <img src="{{ course.iamgeUrl }}" class="img-fluid rounded-start" alt="{{ course.title }}"> {% endcomment %}
+                {% comment %} <img src="{% static 'courses/img/' | add: course.imageUrl %}" class="img-fluid rounded-start" alt="{{ course.title }}"> {% endcomment %}
+                <img src="{% static 'courses/img/' %}{{ course.imageUrl }}" class="img-fluid rounded-start" alt="{{ course.title }}">
             </div>
             <div class="col-8">
                 <div class="card-body">
                     <h5 class="card-title">{{ course.title }}</h5>
-                    <p class="card-text">{{ course.description }} </p>
+                    <p class="card-text">{{ course.description | truncatechars:15 }} </p>
                     <p>
                         {% if course.isUpdated %}
                             <span class="badge bg-success">Güncellendi</span>
@@ -15,6 +18,7 @@
                         {% endif %}
                     </p>
                     {% comment %} <a href="{{ course.url }}" class="btn btn-primary">Go somewhere</a> {% endcomment %}
+                    <p> {{ course.date | date:"l d F Y"  }} </p>
                 </div>
             </div>
         </div>
