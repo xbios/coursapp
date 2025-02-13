@@ -1,13 +1,13 @@
 from django.db import models
 
 # Create your models here.
-class Courses(models.Model):
-    title = models.CharField(max_length=120)
+class Course(models.Model):
+    title = models.CharField(max_length=50)
     description = models.TextField()
-    imageUrl = models.URLField()
-    slug = models.SlugField()
+    imageUrl = models.CharField(max_length=50,blank=False) #URLField()
+    # slug = models.SlugField()
     date = models.DateField()
     isActive = models.BooleanField(default=True)
-    isUpdated = models.BooleanField(default=False)
+    # isUpdated = models.BooleanField(default=False)
 
     
